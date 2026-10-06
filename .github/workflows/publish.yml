@@ -22,6 +22,7 @@ jobs:
           dotnet-version: "8.0.x"
 
       - name: NuGet login via Trusted Publishing
+        id: login
         uses: NuGet/login@v1
         with:
           user: boboaungdev
@@ -31,12 +32,10 @@ jobs:
 
       - name: Push to NuGet
         env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          LOGIN_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
+          SECRET_KEY: ${{ secrets.NUGET_API_KEY }}
         run: |
-          if [ -n "$NUGET_API_KEY" ]; then
-            dotnet nuget push out/*.nupkg --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
-          else
-            dotnet nuget push out/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate
-          fi
+          API_KEY="${LOGIN_KEY:-$SECRET_KEY}"
+          dotnet nuget push out/*.nupkg --api-key "$API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
 
 
