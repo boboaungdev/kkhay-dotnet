@@ -16,7 +16,12 @@
     <PackageTags>crypto;payments;gateway;web3;usdt;bitcoin;blockchain</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DefaultItemExcludes>$(DefaultItemExcludes);tests/**</DefaultItemExcludes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="tests/**" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\" />
