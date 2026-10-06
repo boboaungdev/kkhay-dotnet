@@ -29,5 +29,13 @@ jobs:
         run: dotnet pack Kkhay.csproj --configuration Release -o out
 
       - name: Push to NuGet
-        run: dotnet nuget push out/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: |
+          if [ -n "$NUGET_API_KEY" ]; then
+            dotnet nuget push out/*.nupkg --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
+          else
+            dotnet nuget push out/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate
+          fi
+
 
