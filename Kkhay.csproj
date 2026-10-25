@@ -5,15 +5,15 @@
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <PackageId>Kkhay</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.4</Version>
     <Authors>K Khay</Authors>
     <Company>K Khay</Company>
-    <Description>Official C# and .NET SDK for K Khay Sovereign Crypto Payment Gateway</Description>
+    <Description>Official C# and .NET SDK for K Khay — The Non-Custodial Crypto Payment Gateway (190+ Networks, 500+ Currencies).</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://kkhay.com</PackageProjectUrl>
+    <PackageProjectUrl>https://gateway.kkhay.com</PackageProjectUrl>
     <RepositoryUrl>https://github.com/boboaungdev/kkhay-dotnet</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageTags>crypto;payments;gateway;web3;usdt;bitcoin;blockchain</PackageTags>
+    <PackageTags>kkhay;crypto;payments;payment-gateway;gateway;web3;non-custodial;bitcoin;solana;ton;tron;usdt;usdc;multi-chain</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <DefaultItemExcludes>$(DefaultItemExcludes);tests/**</DefaultItemExcludes>
